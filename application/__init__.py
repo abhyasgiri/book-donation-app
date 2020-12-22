@@ -7,4 +7,4 @@ app.config["SQLALCHEMY_DATABASE_URI"] = "mysql+pymysql://root:Clpm425N6xjC0Nmz@3
 app.config["SECRET_KEY"] = "liabafeuhdanksllnksad"
 db = SQLAlchemy(app)
 
-from application import routes
+from application import routes 

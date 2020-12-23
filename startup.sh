@@ -11,8 +11,8 @@ pip3 install -r requirements.txt
 #python3 -m pip install flask_wtf
 
 sudo mkdir /opt/todo-list-app
-sudo chown -R jenkins /opt/todo-list-app
+sudo chown -R jenkins /opt/book-donation-app
 
 sudo systemctl daemon-reload
 sudo systemctl stop app.service
-sudo systemctl start app.service #need to make the service file 
+sudo systemctl start app.service 

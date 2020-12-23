@@ -19,6 +19,6 @@ class Shops(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     shop_name = db.Column(db.String(30), nullable=False)
     location = db.Column(db.String(50), nullable=False)
-    books = db.relationship('Books', backref='shop')
+    books = db.relationship('Books', backref='shops')
 
 

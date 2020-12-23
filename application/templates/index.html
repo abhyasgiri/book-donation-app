@@ -1,40 +1,33 @@
 {% extends 'layout.html' %}
 {% block body %}
 
-<h2>Completed Tasks</h2>
+<!-- 
+<h2>Books added</h2>
 {% for book in all_books %}
-    {% if book.completed == False %}
+    {% if book.watchlisted == True %}
         {{ book.description }}
         <br>
         {{ book.date_created }}
         <br>
-        <form action = "{{ url_for('update', id=book.id }}">
+        <form action = "{{ url_for('update', id=book.id) }}">
             <input type=submit value="Update">
         </form>
-        <form action = "{{ url_for('update', id=book.id }}">
+        <form action = "{{ url_for('update', id=book.id) }}">
             <input type=submit value="Update">
         </form>
         <br>
         <br>
     {% endif %}
-{% end for %}
+{% endfor %}
 
-<h2>Completed Books</h2>
-{% for book in all_books %}
-    {% if book.completed == True %}
-        {{ book.description }}
+-->
+
+<h2>Shops added</h2>
+{% for shop in all_shops %}
+        {{ shop.shop_name }}
         <br>
-        {{ book.date_created }}
+        {{ shop.location }}
         <br>
-        <form action = "{{ url_for('update', id=book.id }}">
-            <input type=submit value="Update">
-        </form>
-        <form action = "{{ url_for('update', id=book.id }}">
-            <input type=submit value="Update">
-        </form>
-        <br>
-        <br>
-    {% endif %}
 {% endfor %}
 
 {% endblock body %}

@@ -4,8 +4,8 @@
     </head>
     <body>
         <h1>Books available {{ title }}</h1>          #this title appears on the top of the page
-        <a href="{{ url_for('index') }}">Home</a>
-        <a href="{{ url_for('create') }}">Create Book Listing</a>         #links which show up at the top of the page
+        <a href="{{ url_for('home') }}">Home</a>
+        <a href="{{ url_for('createshop') }}">Create Shop</a>         #links which show up at the top of the page
         {% block body %}
         {% endblock body %}
     </body>

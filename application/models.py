@@ -6,7 +6,7 @@ class Books(db.Model):
     book_title = db.Column(db.String(100), nullable=False)
     shop_id = db.Column('shop_id', db.Integer, db.ForeignKey('shops.id'), nullable=False)
     date_added = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
-    watchlisted = db.Column(db.Boolean, nullable=False)
+    watchlisted = db.Column(db.Boolean, nullable=False, default=0)
 
 # class Users(db.Model):
 #     id = db.Column(db.Integer, primary_key=True)

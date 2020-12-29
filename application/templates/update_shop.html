@@ -1,0 +1,14 @@
+{% extends 'layout.html' %}
+{% block body %}
+<br><br>
+<h1>Edit shop: {{ shop.id}} {{shop.shop_name }}</h1>
+
+<form action="{{ url_for('update_shop', id=shop.id) }}" method='POST'>
+    {{ form.hidden_tag() }}
+    <input name="shop_name" value="{{ shop.shop_name }}" />
+    <br />
+    <input name="location" value="{{ shop.location }}" />
+    {{ form.submit }}
+</form>
+
+{% endblock body %}

@@ -1,6 +1,16 @@
 {% extends 'layout.html' %}
 {% block body %}
 
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul class=flashes>
+    {% for message in messages %}
+      <li>{{ message }}</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+
 <!-- 
 <h2>Books added</h2>
 {% for book in all_books %}
@@ -24,7 +34,9 @@
 
 <h2>Shops added</h2>
 {% for shop in all_shops %}
-        {{ shop.shop_name }}
+        <a href="{{ url_for('delete_shop', id=shop.id) }}">Delete</a> | 
+        <a href="{{ url_for('update_shop', id=shop.id)}}">Update</a>{{ shop.shop_name }} |
+        <a href="{{ url_for('create_book', shop_id=shop.id) }}">Add book to shop</a>
         <br>
         {{ shop.location }}
         <br>

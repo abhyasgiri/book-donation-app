@@ -21,18 +21,16 @@ def createshop():
             return redirect(url_for("home"))
     return render_template ("add.html", title="Create a shop", form=form)
 
-@app.route("/create_book/shop_id/<shop_id>", methods = ["GET", "POST"])
-def create_book(shop_id):
+@app.route("/create_book/shop_id/<int:shop_id>/<int:user_id>", methods = ["GET", "POST"])
+def create_book(shop_id, user_id):
     form = BookForm()
     if request.method == "POST":
         if form.validate_on_submit():
-            new_book = Books(book_title=form.book_title.data)
-            import pdb;pdb.set_trace()
-            new_book.shop_id(int(shop_id))
+            new_book = Books(book_title=form.book_title.data, shop_id=shop_id, user_id=user_id)
             db.session.add(new_book)
             db.session.commit()
             return redirect(url_for("home"))
-    return render_template ("add_book.html", title="Create a book", shop_id=shop_id, form=form)
+    return render_template ("add_book.html", title="Create a book", shop_id=shop_id, user_id=user_id, form=form)
 
     
 

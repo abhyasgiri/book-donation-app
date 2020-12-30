@@ -1,10 +1,11 @@
 {% extends 'layout.html' %}
 {% block body %}
 <br><br>
-<form action="{{ url_for('create_book', shop_id=shop_id) }}" method='POST'>
+<form action="{{ url_for('create_book', shop_id=shop_id, user_id=user_id) }}" method='POST'>
     {{ form.hidden_tag() }}
     {{ form.book_title.label}}    {{ form.book_title }} <br>
     <input name="shop_id" value="{{ shop_id }}" hidden="hidden" />
+    <input name="user_id" value="{{ user_id }}" hidden="hidden" />
     {{ form.submit }}
 </form>
 

@@ -40,7 +40,7 @@ def createshop():
             return redirect(url_for("home"))
     return render_template ("add.html", title="Create a shop", form=form)
 
-@app.route("/create_book/<int:shop_id>", methods = ["GET", "POST"])
+@app.route("/create_book/<int:shop_id>/<int:user_id>", methods = ["GET", "POST"])
 def create_book(shop_id, user_id):
     form = BookForm()
     if request.method == "POST":

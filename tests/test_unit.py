@@ -3,7 +3,7 @@ from flask import url_for
 from flask_testing import TestCase
 
 from application import app, db
-from application.models import ___
+from application.models import Shops
 
 class TestBase(TestCase):
     def create_app(self):
@@ -16,7 +16,7 @@ class TestBase(TestCase):
 
     def setUp(self):
         db.create_all()
-        test_shop = Shops(shop_name= "     ", location=  "    ")
+        test_shop = Shops(shop_name= "Shop1", location=  "Road1")
         db.session.add(test_shop)
         db.session.commit()
 
@@ -50,19 +50,20 @@ class TestCreate(TestBase):
     def test_create_shop(self):
         response = self.client.post(
             url_for("createshop"), 
-            data = dict(shop_name = " ", location = " "), 
+            data = dict(shop_name = "Shop1", location = "Road1"), 
             follow_redirects=True
         )
-        self.assertIn(b"       ", response.data)
-    
+        self.assertIn(b"Shop1", response.data)
+        self.assertIn(b"Road1", response.data)
+
 class TestUpdate(TestBase):
     def test_update_shop(self):
         response = self.client.post(
             url_for("update_shop", id=1), 
-            data = dict(shop_name = " ", location = " "), 
+            data = dict(shop_name = "NewShop", location = "NewRoad"), 
             follow_redirects=True
         )
-        self.assertIn(b"       ", response.data)
+        self.assertIn(b"NewShop", response.data)
 
 class TestDelete(TestBase):
     def test_delete_shop(self):
@@ -70,4 +71,4 @@ class TestDelete(TestBase):
             url_for("delete_shop", id=1),
             follow_redirects=True
         )
-        self.assertIn(b"       ", response.data)
+        self.assertIn(b"Shop1 has been deleted!", response.data)

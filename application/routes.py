@@ -18,7 +18,6 @@ def register():
         return redirect(url_for('home'))
     return render_template('register.html', title='Register', form=form)
 
-
 @app.route("/login", methods=['GET', 'POST'])
 def login():
     form = LoginForm()
@@ -42,16 +41,15 @@ def createshop():
     return render_template ("add.html", title="Create a shop", form=form)
 
 @app.route("/create_book/<int:shop_id>", methods = ["GET", "POST"])
-def create_book(shop_id):
+def create_book(shop_id, user_id):
     form = BookForm()
     if request.method == "POST":
         if form.validate_on_submit():
-            new_book = Books(book_title=form.book_title.data, shop_id=shop_id)
+            new_book = Books(book_title=form.book_title.data, shop_id=shop_id, user_id=user_id)
             db.session.add(new_book)
             db.session.commit()
             return redirect(url_for("home"))
-    return render_template ("add_book.html", title="Create a book", shop_id=shop_id, form=form)
-
+    return render_template ("add_book.html", title="Create a book", shop_id=shop_id, user_id=user_id, form=form)
 
 @app.route("/update-shop/<int:id>", methods = ["GET", "POST"])              #to update something on the to do list
 def update_shop(id):

@@ -1,6 +1,6 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, SubmitField, BooleanField
-from wtforms.validators import DataRequired
+from wtforms import StringField, SubmitField, BooleanField, PasswordField
+from wtforms.validators import DataRequired, Length, Email, EqualTo
 
 class BookForm(FlaskForm):
     book_title = StringField('Title of the Book', validators = [DataRequired()])
@@ -11,3 +11,16 @@ class ShopForm(FlaskForm):
     shop_name = StringField('Title of the Shop', validators = [DataRequired()])
     location = StringField('Location of the Shop', validators = [DataRequired()])
     submit = SubmitField('Add Shop')
+
+class RegistrationForm(FlaskForm):
+    username = StringField('Username', validators=[DataRequired(), Length(min=2, max=20)])
+    email = StringField('Email', validators=[DataRequired(), Email()])
+    password = PasswordField('Password', validators=[DataRequired()])
+    confirm_password = PasswordField('Confirm Password', validators=[DataRequired(), EqualTo('password')])
+    submit = SubmitField('Sign Up')
+
+class LoginForm(FlaskForm):
+    email = StringField('Email', validators=[DataRequired(), Email()])
+    password = PasswordField('Password', validators=[DataRequired()])
+    remember = BooleanField('Remember Me')
+    submit = SubmitField('Login')

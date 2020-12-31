@@ -16,7 +16,7 @@ class TestBase(TestCase):
 
     def setUp(self):
         db.create_all()
-        test_shop = Shops(shop_name=    , location=    )
+        test_shop = Shops(shop_name= "     ", location=  "    ")
         db.session.add(test_shop)
         db.session.commit()
 
@@ -34,9 +34,40 @@ class TestViews(TestBase):
         self.assertEqual(response.status_code, 200)
 
     def test_update_shop_get(self):
-        response = self.client.get(url_for('update_shop', id=1))
+        response = self.client.get(url_for('update_shop', id=1), follow_redirects=True)
         self.assertEqual(response.status_code,200)
 
     def test_delete_get(self):
-        response = self.client.get(url_for('delete_shop', id=1))
+        response = self.client.get(url_for('delete_shop', id=1), follow_redirects=True)
         self.assertEqual(response.status_code,200)
+
+class TestRead(TestBase):
+    def test_read_shop(self):
+        response = self.client.get(url_for("home"))
+        self.assertIn(b"     ")     #insert in what we put up in setup Shops( ..... )
+
+class TestCreate(TestBase):
+    def test_create_shop(self):
+        response = self.client.post(
+            url_for("createshop"), 
+            data = dict(shop_name = " ", location = " "), 
+            follow_redirects=True
+        )
+        self.assertIn(b"       ", response.data)
+    
+class TestUpdate(TestBase):
+    def test_update_shop(self):
+        response = self.client.post(
+            url_for("update_shop", id=1), 
+            data = dict(shop_name = " ", location = " "), 
+            follow_redirects=True
+        )
+        self.assertIn(b"       ", response.data)
+
+class TestDelete(TestBase):
+    def test_delete_shop(self):
+        response = self.client.get(
+            url_for("delete_shop", id=1),
+            follow_redirects=True
+        )
+        self.assertIn(b"       ", response.data)

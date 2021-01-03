@@ -44,7 +44,15 @@ class TestViews(TestBase):
 class TestRead(TestBase):
     def test_read_shop(self):
         response = self.client.get(url_for("home"))
-        self.assertIn(b"     ")     #insert in what we put up in setup Shops( ..... )
+        self.assertIn(b"shops added")     #insert in what we put up in setup Shops( ..... )
+
+class TestDelete(TestBase):
+    def test_delete_shop(self):
+        response = self.client.get(
+            url_for("delete_shop", id=1),
+            follow_redirects=True
+        )
+        self.assertIn(b"Deleted shop", response.data, 200)
 
 class TestCreate(TestBase):
     def test_create_shop(self):
@@ -53,8 +61,8 @@ class TestCreate(TestBase):
             data = dict(shop_name = "Shop1", location = "Road1"), 
             follow_redirects=True
         )
-        self.assertIn(b"Shop1", response.data)
-        self.assertIn(b"Road1", response.data)
+        self.assertIn(b"Shop1", response.data, 200)
+        self.assertIn(b"Road1", response.data, 200)
 
 class TestUpdate(TestBase):
     def test_update_shop(self):
@@ -63,12 +71,6 @@ class TestUpdate(TestBase):
             data = dict(shop_name = "NewShop", location = "NewRoad"), 
             follow_redirects=True
         )
-        self.assertIn(b"NewShop", response.data)
+        self.assertIn(b"NewShop", response.data, 200)
+        self.assertIn(b"NewRoad", response.data, 200)
 
-class TestDelete(TestBase):
-    def test_delete_shop(self):
-        response = self.client.get(
-            url_for("delete_shop", id=1),
-            follow_redirects=True
-        )
-        self.assertIn(b"Shop1 has been deleted!", response.data)

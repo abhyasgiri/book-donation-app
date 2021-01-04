@@ -53,12 +53,33 @@ To satisfy the requirements above, I have decided to create a simple book donati
 
 ## Architecture 
 ---
-Database Structure
-Below is an entity relationship diagram (ERD) which illustrates the architectural structure of the database and the types of relationships which occur between the tables. 
+### Database Structure
+Below, entity relationship diagrams (ERD) help illustrate the architectural structure of the database and the types of relationships which occur between the tables. 
 
+ERD Diagram 1 
+Initially, a one-to-many relationship was created between Shops and Users. 
+![erd3](https://user-images.githubusercontent.com/74771160/103586310-bb796980-4edc-11eb-9682-f4e06ca6d711.png)
+
+ERD Diagram 2
+The diagram below shows the final ERD diagram which builds on the previous relationship by associating both tables with another table.
+![ERD](https://user-images.githubusercontent.com/74771160/103575321-70a22680-4ec9-11eb-8fbc-242090fe06b6.png)
 As shown, the app models a many-to-many relationship between Users and Shops using an intermediate table for Books. This allows a user to create shop requests to donate a book to the shop in question. A user can donate books to many shops while a shop can have many users donating books. 
 
-![ERD](https://user-images.githubusercontent.com/74771160/103575321-70a22680-4ec9-11eb-8fbc-242090fe06b6.png)
+### CI Pipeline
+
+![CI pipeline](https://user-images.githubusercontent.com/74771160/103585708-7ef93e00-4edb-11eb-8d70-518e833b6667.png)
+
+Illustrated above is the continuous integration pipeline with the associated frameworks and services related to them. 
+There are four key build stages:
+- Source: Source Code Management (pull code from Git repository)
+- Build: Jenkins & Python
+- Test: Pytest and Selenium
+- Run: Flask Framework on GCP comute VM
+
+## Project Tracking 
+
+
+
 
 
 

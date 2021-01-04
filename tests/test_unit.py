@@ -8,8 +8,7 @@ from application.models import Shops
 class TestBase(TestCase):
     def create_app(self):
         app.config.update(
-            SQLALCHEMY_DATABASE_URI="mysql+pymysql://root:Clpm425N6xjC0Nmz@35.242.128.108/book_donation_db",
-            SECRET_KEY="liabafeuhdanksllnksad",
+            SQLALCHEMY_DATABASE_URI="sqlite:///data.db",
             DEBUG=True
         )
         return app
@@ -44,7 +43,7 @@ class TestViews(TestBase):
 class TestRead(TestBase):
     def test_read_shop(self):
         response = self.client.get(url_for("home"))
-        self.assertIn(b"shops added")     #insert in what we put up in setup Shops( ..... )
+        self.assertIn(b"Shop1")     #insert in what we put up in setup Shops( ..... )
 
 class TestDelete(TestBase):
     def test_delete_shop(self):

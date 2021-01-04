@@ -33,8 +33,8 @@ class TestBase(LiveServerTestCase):
         response = urlopen("http://localhost:5000")
         self.assertEqual(response.code, 200)
 
-class TestTaskCreation(TestBase):
-    def test_task_creation(self):
+class TestShopCreation(TestBase):
+    def test_shop_creation(self):
         # Navigate to the Create Task page
         self.driver.find_element_by_xpath('/html/body/a[2]').click()
         time.sleep(1)

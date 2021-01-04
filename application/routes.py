@@ -6,29 +6,28 @@ from flask import render_template, request, redirect, url_for, flash
 @app.route("/")
 @app.route("/home")
 def home():
-    #all_books = db.session.query(Shops.books).subquery
     all_shops = Shops.query.all()
     all_books = Books.query.all() 
     return render_template("index.html", title="Home", all_books=all_books, all_shops=all_shops)
 
-@app.route("/register", methods=['GET', 'POST'])
-def register():
-    form = RegistrationForm()
-    if form.validate_on_submit():
-        flash(f'Profile created for {form.username.data}!', 'Successful')
-        return redirect(url_for('home'))
-    return render_template('register.html', title='Register', form=form)
+#@app.route("/register", methods=['GET', 'POST'])
+#def register():
+#    form = RegistrationForm()
+#   if form.validate_on_submit():
+#        flash(f'Profile created for {form.username.data}!', 'Successful')
+#        return redirect(url_for('home'))
+#    return render_template('register.html', title='Register', form=form)
 
-@app.route("/login", methods=['GET', 'POST'])
-def login():
-    form = LoginForm()
-    if form.validate_on_submit():
-        if form.email.data == 'admin@donationapp.com' and form.password.data == 'password':
-            flash('You have been logged in!', 'success')
-            return redirect(url_for('home'))
-        else:
-            flash('Login Unsuccessful. Please check username and password', 'danger')
-    return render_template('login.html', title='Login', form=form)
+#@app.route("/login", methods=['GET', 'POST'])
+#def login():
+#    form = LoginForm()
+#    if form.validate_on_submit():
+#        if form.email.data == 'admin@donationapp.com' and form.password.data == 'password':
+#            flash('You have been logged in!', 'success')
+#            return redirect(url_for('home'))
+#        else:
+#            flash('Login Unsuccessful. Please check username and password', 'danger')
+#    return render_template('login.html', title='Login', form=form)
 
 @app.route("/createshop", methods = ["GET", "POST"])
 def createshop():
@@ -52,12 +51,7 @@ def create_book(shop_id, user_id):
             return redirect(url_for("home"))
     return render_template ("add_book.html", title="Create a book", shop_id=shop_id, user_id=user_id, form=form)
 
-#@app.route("view_shop/<int:shop_id>", methods = ["GET", "POST"])
-#def view_shop(shop_id):
-#    all_books = Shops.
-
-
-@app.route("/update-shop/<int:id>", methods = ["GET", "POST"])              #to update something on the to do list
+@app.route("/update-shop/<int:id>", methods = ["GET", "POST"])            
 def update_shop(id):
     form = ShopForm()
     shop = Shops.query.filter_by(id=id).first()

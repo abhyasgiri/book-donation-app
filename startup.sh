@@ -3,16 +3,13 @@
 sudo apt update 
 sudo apt-get install python3-venv 
 
-python3 -m venv venv
+sudo python3 -m venv venv
 source venv/bin/activate
 pip3 install -r requirements.txt
-#python3 -m pip install flask
-#python3 -m pip install flask_sqlalchemy
-#python3 -m pip install flask_wtf
 
-sudo mkdir /opt/todo-list-app
-sudo chown -R jenkins /opt/book-donation-app
+sudo mkdir /opt/book-donation-app-1-2
+sudo chown -R jenkins /opt/book-donation-app-1-2
 
 sudo systemctl daemon-reload
 sudo systemctl stop app.service
-sudo systemctl start app.service 
+sudo systemctl start app.service

@@ -11,26 +11,6 @@
   {% endif %}
 {% endwith %}
 
-<!-- 
-<h2>Books added</h2>
-{% for book in all_books %}
-    {% if book.watchlisted == True %}
-        {{ book.description }}
-        <br>
-        {{ book.date_created }}
-        <br>
-        <form action = "{{ url_for('update', id=book.id) }}">
-            <input type=submit value="Update">
-        </form>
-        <form action = "{{ url_for('update', id=book.id) }}">
-            <input type=submit value="Update">
-        </form>
-        <br>
-        <br>
-    {% endif %}
-{% endfor %}
-
--->
 
 <h2>Shops added</h2>
 {% for shop in all_shops %}
@@ -40,6 +20,18 @@
         <br>
         {{ shop.location }}
         <br>
+{% endfor %}
+
+<h2>Books added</h2>
+{% for book in all_books %}
+{% for shop in all_shops %}
+        <a> -> New Book! <br> Shop name: </a>{{ shop.shop_name }} <br>
+        <a> Book Title: </a> {{ book.book_title }} <br>
+        <a> Date added: </a> {{ book.date_added }} <br>
+        <a> Location: </a> {{ shop.location }}
+        <br>
+        <br>
+{% endfor %}
 {% endfor %}
 
 {% endblock body %}

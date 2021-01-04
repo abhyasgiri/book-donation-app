@@ -6,8 +6,9 @@ from flask import render_template, request, redirect, url_for, flash
 @app.route("/")
 @app.route("/home")
 def home():
-    all_books = Books.query.all()
-    all_shops = Shops.query.all()               #to view my tasks READ
+    #all_books = db.session.query(Shops.books).subquery
+    all_shops = Shops.query.all()
+    all_books = Books.query.all() 
     return render_template("index.html", title="Home", all_books=all_books, all_shops=all_shops)
 
 @app.route("/register", methods=['GET', 'POST'])
@@ -50,6 +51,11 @@ def create_book(shop_id, user_id):
             db.session.commit()
             return redirect(url_for("home"))
     return render_template ("add_book.html", title="Create a book", shop_id=shop_id, user_id=user_id, form=form)
+
+#@app.route("view_shop/<int:shop_id>", methods = ["GET", "POST"])
+#def view_shop(shop_id):
+#    all_books = Shops.
+
 
 @app.route("/update-shop/<int:id>", methods = ["GET", "POST"])              #to update something on the to do list
 def update_shop(id):

@@ -4,7 +4,7 @@ from datetime import datetime
 class Books(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     book_title = db.Column(db.String(100), nullable=False)
-    shop_id = db.Column('shop_id', db.Integer, db.ForeignKey('shops.id'), nullable=False)
+    shop_id = db.Column('shop_id', db.Integer, db.ForeignKey('shops.id'), nullable=True)
     user_id = db.Column('user_id', db.Integer, db.ForeignKey('users.id'), nullable=False, default=1)
     date_added = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
     watchlisted = db.Column(db.Boolean, nullable=False, default=0)

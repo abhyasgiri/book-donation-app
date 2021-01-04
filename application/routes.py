@@ -71,7 +71,7 @@ def update_shop(id):
     return render_template("update_shop.html", form=form, title="Update Shop", shop=shop)
 
 
-@app.route("/delete-shop/<int:id>", methods = ["GET", "POST"])
+@app.route("/delete-shop/<int:id>", methods = ["GET"])
 def delete_shop(id):
     shop = Shops.query.filter_by(id=id).first()
     db.session.delete(shop)

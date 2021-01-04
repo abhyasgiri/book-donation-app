@@ -43,7 +43,7 @@ To satisfy the requirements above, I have decided to create a simple book donati
   - *Shop name*
   - *Shop Location*
 
-- Add books to newly created shop with the following information:
+- Create a book listing with the following information:
   - *Book title*
   - *Date and Time* the book was added
 
@@ -58,6 +58,7 @@ Below is an entity relationship diagram (ERD) which illustrates the architectura
 
 As shown, the app models a many-to-many relationship between Users and Shops using an intermediate table for Books. This allows a user to create shop requests to donate a book to the shop in question. A user can donate books to many shops while a shop can have many users donating books. 
 
+![ImageDescription](C:\Users\abhya\OneDrive\Documents\QA\Training\Project)
 
 
 

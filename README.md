@@ -58,7 +58,8 @@ Below is an entity relationship diagram (ERD) which illustrates the architectura
 
 As shown, the app models a many-to-many relationship between Users and Shops using an intermediate table for Books. This allows a user to create shop requests to donate a book to the shop in question. A user can donate books to many shops while a shop can have many users donating books. 
 
-![ERD](https://user-images.githubusercontent.com/74771160/103574919-b4486080-4ec8-11eb-9d7c-d327efe164a5.png)
+![ERD](https://user-images.githubusercontent.com/74771160/103575321-70a22680-4ec9-11eb-8fbc-242090fe06b6.png)
+
 
 
 

@@ -10,25 +10,6 @@ def home():
     all_books = Books.query.all() 
     return render_template("index.html", title="Home", all_books=all_books, all_shops=all_shops)
 
-#@app.route("/register", methods=['GET', 'POST'])
-#def register():
-#    form = RegistrationForm()
-#   if form.validate_on_submit():
-#        flash(f'Profile created for {form.username.data}!', 'Successful')
-#        return redirect(url_for('home'))
-#    return render_template('register.html', title='Register', form=form)
-
-#@app.route("/login", methods=['GET', 'POST'])
-#def login():
-#    form = LoginForm()
-#    if form.validate_on_submit():
-#        if form.email.data == 'admin@donationapp.com' and form.password.data == 'password':
-#            flash('You have been logged in!', 'success')
-#            return redirect(url_for('home'))
-#        else:
-#            flash('Login Unsuccessful. Please check username and password', 'danger')
-#    return render_template('login.html', title='Login', form=form)
-
 @app.route("/createshop", methods = ["GET", "POST"])
 def createshop():
     form = ShopForm()
@@ -63,6 +44,25 @@ def update_shop(id):
         return redirect(url_for("home"))
 
     return render_template("update_shop.html", form=form, title="Update Shop", shop=shop)
+
+#@app.route("/register", methods=['GET', 'POST'])
+#def register():
+#    form = RegistrationForm()
+#   if form.validate_on_submit():
+#        flash(f'Profile created for {form.username.data}!', 'Successful')
+#        return redirect(url_for('home'))
+#    return render_template('register.html', title='Register', form=form)
+
+#@app.route("/login", methods=['GET', 'POST'])
+#def login():
+#    form = LoginForm()
+#    if form.validate_on_submit():
+#        if form.email.data == 'admin@donationapp.com' and form.password.data == 'password':
+#            flash('You have been logged in!', 'success')
+#            return redirect(url_for('home'))
+#        else:
+#            flash('Login Unsuccessful. Please check username and password', 'danger')
+#    return render_template('login.html', title='Login', form=form)
 
 
 @app.route("/delete-shop/<int:id>", methods = ["GET"])

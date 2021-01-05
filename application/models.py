@@ -1,5 +1,6 @@
 from application import db
 from datetime import datetime
+from hashutils import make_pw_hash
 
 class Books(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -13,8 +14,13 @@ class Users(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(30), nullable=False, unique=True)
     email = db.Column(db.String(120), nullable=False)
-    password = db.Column(db.String(30), nullable=False, server_default='')
+    pw_hash = db.Column(db.String(120), nullable=False, server_default='')
     books = db.relationship('Books', backref='user')
+
+    def __init__(self, username, email, password):
+        self.username = username
+        self.email= email
+        self.pw_hash = make_pw_hash(password)
 
 class Shops(db.Model):
     id = db.Column(db.Integer, primary_key=True)

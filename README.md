@@ -86,7 +86,18 @@ The board has been used for project tracking by following the method of moving e
 
 ## Risk Assessment
 ---
-An initial risk assessment was carried out at the start of the project to assess & anticipate the areas which require focus during project delivery. 
+An initial risk assessment was carried out at the start of the project to assess & anticipate the areas which may require focus during project delivery. 
+<img width="326" alt="risk assessment before" src="https://user-images.githubusercontent.com/74771160/103599191-7b29e380-4efc-11eb-9a77-e7ebfeb49da1.PNG">
+
+Below is the complete risk assessment which was carried out at the end of the project, outlining proposed mitigations and response actions in the event of such attacks/faults:
+<img width="643" alt="risk assessment after" src="https://user-images.githubusercontent.com/74771160/103599313-c643f680-4efc-11eb-8c90-4f009ecaa9a8.PNG">
+
+## Testing
+---
+
+Pytest has been used to run unit tests where if the tested function is run, the unit tests assert that the output should be the specified value. Integration tests have also been carried out using pytest in conjunction with Selenium. The steps taken for integration testing are as follows:
+
+- 
 
 
 

@@ -121,6 +121,22 @@ Jenkins has been used to run both pytests. As shown above, a test coverage of 87
 
 ## Front-End Design
 ---
+For the scope of this project, the front-end design is largely under-developed. However, as desired, it fulfils the criteria for CRUD functionalities as required by the MVP specifications. Below is the home page of the application which has a brief welcome message and links to begin using the app to create book listings.
+
+<img width="451" alt="app1" src="https://user-images.githubusercontent.com/74771160/103604681-bd0d5680-4f09-11eb-8fe3-0979d6fd506c.PNG">
+
+Clicking on Create Shop brings the user to a form (see below) where shop name (eg: Oxfam Shop) and Location (eg: Elmers Road) can be entered. The result of the entry is shown in the following screenshot. 
+
+<img width="471" alt="app2" src="https://user-images.githubusercontent.com/74771160/103604749-e9c16e00-4f09-11eb-9202-a8fbd9f296ee.PNG">
+
+<img width="487" alt="app3" src="https://user-images.githubusercontent.com/74771160/103604889-3c9b2580-4f0a-11eb-972b-bc3ba3693441.PNG">
+
+The shop details can be updated by clicking on Update and deleted by clicking on Delete. Upon execution, both functions result in a message flashing on the homepage to alert the user the order has been completed. Below is an example with the delete function:
+
+<img width="463" alt="appdelete" src="https://user-images.githubusercontent.com/74771160/103605052-addad880-4f0a-11eb-84f2-f2793924b9a0.PNG">
+
+
+
 
 
 

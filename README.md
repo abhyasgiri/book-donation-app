@@ -67,11 +67,11 @@ As shown, the app models a many-to-many relationship between Users and Shops usi
 
 ### CI Pipeline
 
-![CI pipeline](https://user-images.githubusercontent.com/74771160/103596761-91cd3c00-4ef6-11eb-8dbf-67c77a60b80a.png)
+![CI pipeline (2)](https://user-images.githubusercontent.com/74771160/103597456-2edca480-4ef8-11eb-8906-6974630745f9.png)
 
-Illustrated above is the continuous integration pipeline with the associated frameworks and services related to them. 
-There are four key build stages:
-- Source: Source Code Management (pull code from Git repository)
+Illustrated above is the continuous integration pipeline with the associated frameworks and services related to them. This pipeline allows for rapid and simple development-to-deployment by automating the integration process such that one can code on a local machine and push it to GitHub, which prompts github to push the new code to Jenkins via a webhook to finally be automatically installed on the cloud VM. The testing environment is run in debugger mode, which grants for dynamic testing to be carried out.
+There are four key build stages the code goes through:
+- Source: Source Code Management (pull code from Git repository via webhook)
 - Build: Jenkins & Python
 - Test: Pytest and Selenium
 - Run: Flask Framework on GCP comute VM

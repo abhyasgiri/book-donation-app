@@ -77,6 +77,17 @@ There are four key build stages:
 - Run: Flask Framework on GCP comute VM
 
 ## Project Tracking 
+---
+Trello was used to track project progress. Here is the link to the trello board: https://trello.com/b/aEM89xkR/book-donation-app
+
+<img width="959" alt="trello board" src="https://user-images.githubusercontent.com/74771160/103591840-3052a080-4ee9-11eb-810b-db2d6efc7066.PNG">
+
+The board has been used for project tracking by following the method of moving elements from the 'Planning' phase, across the 'In progress' phase, to the 'Done' phase. There is also a collation of ongoing issues listed. Each project element is labled as a specfic category of work, as well as being colour coded. A MOSCOW prioritisation system has been deployed to order the user stories in order of importance pertaining to the MVP specifications.
+
+## Risk Assessment
+---
+An initial risk assessment was carried out at the start of the project to assess & anticipate the areas which require focus during project delivery.
+
 
 
 

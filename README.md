@@ -67,7 +67,7 @@ As shown, the app models a many-to-many relationship between Users and Shops usi
 
 ### CI Pipeline
 
-![CI pipeline](https://user-images.githubusercontent.com/74771160/103585708-7ef93e00-4edb-11eb-8d70-518e833b6667.png)
+![CI pipeline](https://user-images.githubusercontent.com/74771160/103596761-91cd3c00-4ef6-11eb-8dbf-67c77a60b80a.png)
 
 Illustrated above is the continuous integration pipeline with the associated frameworks and services related to them. 
 There are four key build stages:
@@ -86,7 +86,7 @@ The board has been used for project tracking by following the method of moving e
 
 ## Risk Assessment
 ---
-An initial risk assessment was carried out at the start of the project to assess & anticipate the areas which require focus during project delivery.
+An initial risk assessment was carried out at the start of the project to assess & anticipate the areas which require focus during project delivery. 
 
 
 

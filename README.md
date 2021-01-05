@@ -153,9 +153,23 @@ The shop details can be updated by clicking on Update and deleted by clicking on
 
 <img width="463" alt="appdelete" src="https://user-images.githubusercontent.com/74771160/103605052-addad880-4f0a-11eb-84f2-f2793924b9a0.PNG">
 
-## Known Issues 
+## Known Issues & Ongoing development
 ---
 
+- Systemd setup ran into issues although sudoers and service files have been successfully setup
+- Login and Register functions have also been coded in routes.py by have been hashed out for now. The code is integrated with the GUI however, the registered users need to be put into the database which is where issues had been incurred
+- Creating tests for Login and Register were also incomplete due to syntaxial errors and so it was decided to hash out these functions in routes.py
+
+## Future Improvements
+---
+
+- Use a systemd service to run the app in the background
+- Automate testing so that reports are also automatically generated
+- Add a watchlist function; currently, watchlisted is already added as an attribute for a book but is set as default value of 0, allowing for future development
+
+## Authors
+---
+Abhyas Giri 
 
 
 

@@ -54,7 +54,11 @@ To satisfy the requirements above, I have decided to create a simple book donati
 - Update the shop details (satisfies 'Update')
 - Delete the shop (satisfies 'Delete')
 
-Flask has been chosen as the web framework of choice for this project. There are several advantage of using Flask: 1) Offers a light simple framework and is easy to understand, 2) Flexible - almost all parts of flask are open to change, 3) Integrated support for unit testing and 4) Offers Jinja2 templating. 
+Flask has been chosen as the web framework of choice for this project. There are several advantage of using Flask: 
+1) Offers a light simple framework and is easy to understand
+2) Flexible - almost all parts of flask are open to change 
+3) Integrated support for unit testing
+4) Offers Jinja2 templating. 
 
 ## Architecture 
 ---

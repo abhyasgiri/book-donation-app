@@ -95,9 +95,30 @@ Below is the complete risk assessment which was carried out at the end of the pr
 ## Testing
 ---
 
-Pytest has been used to run unit tests where if the tested function is run, the unit tests assert that the output should be the specified value. Integration tests have also been carried out using pytest in conjunction with Selenium. The steps taken for integration testing are as follows:
+Pytest has been used to run unit tests where if the tested function is run, the unit tests assert that the output should be the specified value. Integration tests have also been carried out using pytest in conjunction with Selenium. Testing has been carried out on an sqllite database instead of the database for the app itself for better practice and its advantageous security implications. The steps taken for integration testing are detailed below.
 
-- 
+Firstly, Chromium Browser and the chromedriver were downloaded by running the following commands:
+- sudo apt-get install -y unzip
+- sudo apt-get install -y chromium-browser
+- wget https://chromedriver.storage.googleapis.com/2.41/chromedriver_linux64.zip
+- unzip chromedriver_linux64.zip
+This unzips the chromedriver onto the user's root directory. Next, the virtual environment (venv) was created (if necessary), and activated. Pip dependencies (including selenium and flask-testing) were made sure to be installed. While writing the tests, the LiveServerTestCase was used by importing from flask_testing. The integration tests included a create_app, setUp and teardown functions where the inspect tool (Ctrl+Shift+I) was used on the live flask app to copy the relevant xPaths into the chromedriver.
+
+Running the integration tests were successful:
+<img width="603" alt="int_test" src="https://user-images.githubusercontent.com/74771160/103602548-36a24600-4f04-11eb-961a-76b48348a733.PNG">
+
+Running the unit tests were also successful: 
+<img width="466" alt="test jenkins summary" src="https://user-images.githubusercontent.com/74771160/103603776-4cfdd100-4f07-11eb-8f53-7fc88b240294.PNG">
+
+Jenkins has been used to run both pytests. As shown above, a test coverage of 87% has been achieved. Improving on this value would require further inspection of the statements missed in routes.py (lines 37-40, 45-52). 
+
+## Front-End Design
+---
+
+
+
+
+
 
 
 

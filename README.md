@@ -54,8 +54,14 @@ To satisfy the requirements above, I have decided to create a simple book donati
 - Update the shop details (satisfies 'Update')
 - Delete the shop (satisfies 'Delete')
 
+Flask has been chosen as the web framework of choice for this project. There are several advantage of using Flask: 1) Offers a light simple framework and is easy to understand, 2) Flexible - almost all parts of flask are open to change, 3) Integrated support for unit testing and 4) Offers Jinja2 templating. 
+
 ## Architecture 
 ---
+### Licensing 
+
+This app will be an open source project meaning anyone in the programming world is free to use it and modify the code to support and contribute to its development by communicating ideas with the author. GNU General Public License (GPL) is one of the most popular open source licenses which allows for the aforementioned features but with the condition that if a derivative work of this code is re-distributed it cannot be released as a commercial closed-source application. Use of GPL also permits the option of using its vast open source libraries which may be useful in the future. For these reasons, I have chosen a GNU GPL license. 
+
 ### Database Structure
 Below, entity relationship diagrams (ERD) help illustrate the architectural structure of the database and the types of relationships which occur between the tables. 
 
@@ -100,6 +106,11 @@ Below is the complete risk assessment which was carried out at the end of the pr
 
 <img width="643" alt="risk assessment after" src="https://user-images.githubusercontent.com/74771160/103599313-c643f680-4efc-11eb-8c90-4f009ecaa9a8.PNG">
 
+The image below displays the use of sha256 hashing in the database to hide user passwords:
+
+<img width="639" alt="hashing" src="https://user-images.githubusercontent.com/74771160/103606126-9bae6980-4f0d-11eb-9bea-69ae197383bc.PNG">
+
+
 ## Testing
 ---
 
@@ -112,11 +123,11 @@ Firstly, Chromium Browser and the chromedriver were downloaded by running the fo
 - unzip chromedriver_linux64.zip
 This unzips the chromedriver onto the user's root directory. Next, the virtual environment (venv) was created (if necessary), and activated. Pip dependencies (including selenium and flask-testing) were made sure to be installed. While writing the tests, the LiveServerTestCase was used by importing from flask_testing. The integration tests included a create_app, setUp and teardown functions where the inspect tool (Ctrl+Shift+I) was used on the live flask app to copy the relevant xPaths into the chromedriver.
 
-Running the integration tests were successful:
+Running the integration tests were successful (100%):
 
 <img width="603" alt="int_test" src="https://user-images.githubusercontent.com/74771160/103602548-36a24600-4f04-11eb-961a-76b48348a733.PNG">
 
-Running the unit tests were also successful: 
+Running the unit tests were also successful (87%): 
 
 <img width="466" alt="test jenkins summary" src="https://user-images.githubusercontent.com/74771160/103603776-4cfdd100-4f07-11eb-8f53-7fc88b240294.PNG">
 
@@ -137,6 +148,9 @@ Clicking on Create Shop brings the user to a form (see below) where shop name (e
 The shop details can be updated by clicking on Update and deleted by clicking on Delete. Upon execution, both functions result in a message flashing on the homepage to alert the user the order has been completed. Below is an example with the delete function:
 
 <img width="463" alt="appdelete" src="https://user-images.githubusercontent.com/74771160/103605052-addad880-4f0a-11eb-84f2-f2793924b9a0.PNG">
+
+## Known Issues 
+---
 
 
 

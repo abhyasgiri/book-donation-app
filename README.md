@@ -18,9 +18,9 @@ Contents
 
 ## Resources
 
-[Trello Board] (https://trello.com/b/aEM89xkR/book-donation-app)
+[Trello Board](https://trello.com/b/aEM89xkR/book-donation-app)
 
-[CI Pipeline] (https://user-images.githubusercontent.com/74771160/103597456-2edca480-4ef8-11eb-8906-6974630745f9.png)
+[CI Pipeline](https://user-images.githubusercontent.com/74771160/103597456-2edca480-4ef8-11eb-8906-6974630745f9.png)
 
 Risk Assessment (see below)
 
